@@ -1,4 +1,5 @@
 // app/api/incidents/[id]/resolve/route.js
+export const dynamic = 'force-dynamic';
 import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
 
