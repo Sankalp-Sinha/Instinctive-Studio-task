@@ -8,7 +8,7 @@ SecureSight Dashboard is a CCTV monitoring software that allows users to monitor
 
 ## Public GitHub Repo
 
-[https://github.com/Sankalpkumarsinha/SecureSight-Dashboard](https://github.com/Sankalpkumarsinha/SecureSight-Dashboard)
+[https://github.com/Sankalp-Sinha/Instinctive-Studio-task](https://github.com/Sankalp-Sinha/Instinctive-Studio-task)
 
 ## Deployment Instructions
 
@@ -16,7 +16,7 @@ To deploy and run this project locally, follow these steps:
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/Sankalpkumarsinha/SecureSight-Dashboard.git](https://github.com/Sankalpkumarsinha/SecureSight-Dashboard.git)
+    git clone [https://github.com/Sankalp-Sinha/Instinctive-Studio-task](https://github.com/Sankalp-Sinha/Instinctive-Studio-task)
     cd SecureSight-Dashboard
     ```
 
@@ -66,11 +66,8 @@ To deploy and run this project locally, follow these steps:
 
 * **Real-time Incident Updates:** Implement WebSockets (e.g., Socket.IO) for real-time updates of new incidents and resolution status without requiring manual page refreshes.
 * **User Authentication and Authorization:** Add a proper authentication system (e.g., NextAuth.js) to secure API routes and manage user roles and permissions.
-* **Advanced Incident Filtering and Search:** Implement more comprehensive filtering options in the Incident List (e.g., by camera, date range, type) and a search bar for specific incidents.
 * **Video Streaming Integration:** Replace static image placeholders in the Incident Player with actual video streams (even simulated ones) to provide a more dynamic experience.
 * **Configurable Timeline:** Allow users to adjust the timeline's time window (e.g., last 12 hours, custom range) and zoom levels for more detailed analysis.
 * **Notifications:** Implement desktop notifications or in-app alerts for new critical incidents.
 * **Testing:** Add unit, integration, and end-to-end tests (e.g., using Jest, React Testing Library, Cypress) to ensure application stability and prevent regressions.
-* **Improved Error Handling UI:** Provide more user-friendly error messages and recovery options in the frontend.
-* **Accessibility Enhancements:** Further improve keyboard navigation, ARIA attributes, and overall accessibility.
 * **Pagination/Infinite Scrolling:** For the incident list, implement pagination or infinite scrolling to efficiently handle a large number of incidents.
