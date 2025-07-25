@@ -1,40 +1,76 @@
-<<<<<<< HEAD
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# SecureSight Dashboard
 
-## Getting Started
+SecureSight Dashboard is a CCTV monitoring software that allows users to monitor live feeds, detect incidents through computer vision models, and manage incidents. This project focuses on building the frontend dashboard and a basic backend API.
 
-First, run the development server:
+## Live URL
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+[https://securesight-dashboard.vercel.app/](https://securesight-dashboard.vercel.app/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Public GitHub Repo
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+[https://github.com/Sankalpkumarsinha/SecureSight-Dashboard](https://github.com/Sankalpkumarsinha/SecureSight-Dashboard)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deployment Instructions
 
-## Learn More
+To deploy and run this project locally, follow these steps:
 
-To learn more about Next.js, take a look at the following resources:
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/Sankalpkumarsinha/SecureSight-Dashboard.git](https://github.com/Sankalpkumarsinha/SecureSight-Dashboard.git)
+    cd SecureSight-Dashboard
+    ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3.  **Set up the database:**
+    This project uses PostgreSQL. Ensure you have PostgreSQL installed and running, or use a service like Neon, Supabase, or PlanetScale.
 
-## Deploy on Vercel
+    Create a `.env` file in the root directory and add your database URL:
+    ```
+    DATABASE_URL="postgresql://user:password@host:port/database"
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4.  **Run Prisma migrations and seed the database:**
+    ```bash
+    npx prisma migrate dev --name init
+    npx prisma db seed
+    ```
+    This will set up your database schema and populate it with initial camera and incident data.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-=======
-# Instinctive-Studio-task
->>>>>>> 1ef7012e4f11677020ee4dbd97ead54aa113757a
+5.  **Start the development server:**
+    ```bash
+    npm run dev
+    # or
+    yarn dev
+    ```
+
+6.  **Open in your browser:**
+    The application will be accessible at `http://localhost:3000`.
+
+## Tech Decisions
+
+* **Next.js 15 App Router:** Chosen for its powerful routing capabilities, server components, and overall performance benefits, providing a modern and efficient development experience.
+* **React (with Hooks):** Utilized for building interactive UI components, leveraging `useState` and `useEffect` for managing component state and side effects.
+* **Tailwind CSS:** Employed for rapid UI development with a utility-first CSS framework, allowing for highly customizable designs directly in the JSX.
+* **Prisma:** Selected as the ORM (Object-Relational Mapper) for seamless database interaction. Its type-safe client and easy migrations simplify data management and queries.
+* **PostgreSQL:** A robust and scalable relational database chosen for its reliability and suitability for structured data.
+* **Vercel:** Used for deployment due to its excellent integration with Next.js and ease of use for continuous deployment.
+* **Lucide React:** A library for consistent and high-quality SVG icons, enhancing the visual appeal of the dashboard.
+
+## If I had more time...
+
+* **Real-time Incident Updates:** Implement WebSockets (e.g., Socket.IO) for real-time updates of new incidents and resolution status without requiring manual page refreshes.
+* **User Authentication and Authorization:** Add a proper authentication system (e.g., NextAuth.js) to secure API routes and manage user roles and permissions.
+* **Advanced Incident Filtering and Search:** Implement more comprehensive filtering options in the Incident List (e.g., by camera, date range, type) and a search bar for specific incidents.
+* **Video Streaming Integration:** Replace static image placeholders in the Incident Player with actual video streams (even simulated ones) to provide a more dynamic experience.
+* **Configurable Timeline:** Allow users to adjust the timeline's time window (e.g., last 12 hours, custom range) and zoom levels for more detailed analysis.
+* **Notifications:** Implement desktop notifications or in-app alerts for new critical incidents.
+* **Testing:** Add unit, integration, and end-to-end tests (e.g., using Jest, React Testing Library, Cypress) to ensure application stability and prevent regressions.
+* **Improved Error Handling UI:** Provide more user-friendly error messages and recovery options in the frontend.
+* **Accessibility Enhancements:** Further improve keyboard navigation, ARIA attributes, and overall accessibility.
+* **Pagination/Infinite Scrolling:** For the incident list, implement pagination or infinite scrolling to efficiently handle a large number of incidents.
