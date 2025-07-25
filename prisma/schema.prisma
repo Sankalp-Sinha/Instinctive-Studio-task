@@ -1,0 +1,30 @@
+// schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Camera {
+  id       String    @id @default(cuid())
+  name     String
+  location String?
+  // Add the inverse relation field here
+  incidents Incident[] // This establishes the one-to-many relationship from Camera to Incident
+}
+
+model Incident {
+  id           String   @id @default(cuid())
+  type         String
+  tsStart      DateTime
+  tsEnd        DateTime
+  thumbnailUrl String?
+  resolved     Boolean  @default(false)
+  // These two lines define the foreign key and the relation back to Camera
+  cameraId     String   // The foreign key column in the Incident table
+  camera       Camera   @relation(fields: [cameraId], references: [id], onDelete: Cascade) // The relation field
+}
