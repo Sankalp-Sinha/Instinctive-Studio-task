@@ -4,7 +4,7 @@ SecureSight Dashboard is a CCTV monitoring software that allows users to monitor
 
 ## Live URL
 
-[https://securesight-dashboard.vercel.app/](https://securesight-dashboard.vercel.app/)
+[https://instinctive-studio-task-cgbq-gtoobuksg.vercel.app/](https://instinctive-studio-task-cgbq-gtoobuksg.vercel.app/)
 
 ## Public GitHub Repo
 
